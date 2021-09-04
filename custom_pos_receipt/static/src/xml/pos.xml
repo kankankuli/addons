@@ -165,7 +165,7 @@
                         <span t-esc='widget.format_currency_no_symbol(tax.amount)' class="pos-receipt-right-align"/>
                     </div>
                 </t>
-                <div>
+                <div style="display: none;">
                     Total Taxes
                     <span t-esc='widget.format_currency(receipt.total_tax)' class="pos-receipt-right-align"/>
                 </div>
