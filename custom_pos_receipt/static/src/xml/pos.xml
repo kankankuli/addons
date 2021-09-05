@@ -18,7 +18,7 @@
                     <div><t t-esc='receipt.company.contact_address' /></div>
                 </t>
                 <t t-if='receipt.company.company_registry'>
-                    <div>(Reg. No. <t t-esc='receipt.company.company_registry' />)</div>
+                    <div>Reg. No. <t t-esc='receipt.company.company_registry' /></div>
                 </t>
                                 <t t-if='receipt.company.vat'>
                     <div><t t-esc='receipt.company.vat_label'/>:<t t-esc='receipt.company.vat' /></div>
