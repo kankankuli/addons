@@ -52,7 +52,7 @@
             <div class='orderlines'>
                 <t t-foreach='receipt.orderlines' t-as='line'>
                     <t t-if='simple'>
-                        <div t-esc='line.product_name_wrapped[0]'/><t t-call="OrderReceiptWrappedProductNameLines"/><t t-if="line.display_discount_policy == 'without_discount' &amp;&amp; line.price != line.price_lst"><div class="pos-receipt-left-padding"><t t-esc="widget.format_currency_no_symbol(line.price_lst)" />-><t t-esc="widget.format_currency_no_symbol(line.price)" /></div>
+                        <div t-esc='line.product_name_wrapped[0]'/><t t-if="line.display_discount_policy == 'without_discount' &amp;&amp; line.price != line.price_lst"><div class="pos-receipt-left-padding"><t t-esc="widget.format_currency_no_symbol(line.price_lst)" />-><t t-esc="widget.format_currency_no_symbol(line.price)" /></div>
                         </t>
                         <t t-elif='line.discount !== 0'>
                             <div class="pos-receipt-left-padding">
@@ -80,7 +80,7 @@
                         </div>
                     </t>
                     <t t-if='!simple'>
-                        <div t-esc='line.product_name_wrapped[0]'/><t t-call="OrderReceiptWrappedProductNameLines"/><t t-if="line.display_discount_policy == 'without_discount' &amp;&amp; line.price != line.price_lst"><div class="pos-receipt-left-padding"><t t-esc="widget.format_currency_no_symbol(line.price_lst)" />-><t t-esc="widget.format_currency_no_symbol(line.price)" /></div>
+                        <div t-esc='line.product_name_wrapped[0]'/><t t-if="line.display_discount_policy == 'without_discount' &amp;&amp; line.price != line.price_lst"><div class="pos-receipt-left-padding"><t t-esc="widget.format_currency_no_symbol(line.price_lst)" />-><t t-esc="widget.format_currency_no_symbol(line.price)" /></div>
                         </t>
                         <t t-elif='line.discount !== 0'>
                             <div class="pos-receipt-left-padding">
