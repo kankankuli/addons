@@ -202,4 +202,15 @@
 
         </div>
     </t>
+ 
+     <t t-name="CustomerFacingDisplayHead">
+        <div class="resources">
+            <base t-att-href="origin"/>
+			
+            <link href="/point_of_sale/static/src/css/customer_facing_display.css" rel="stylesheet"/>
+			            <link href="custom_pos_receipt/static/src/css/123.css" rel="stylesheet"/>
+
+        </div>
+    </t>
+ 
 </templates>
