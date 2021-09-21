@@ -22,7 +22,7 @@
     'images': ['static/description/banner.jpg'],
     'description': "Customized our point of sale receipt",
     'depends': ['base', 'point_of_sale'],
-    "data": ['views/customer_facing_display.xml'],
+    "data": [],
     'demo': [],
     'qweb': ['static/src/xml/pos.xml'],
     'installable': True,
