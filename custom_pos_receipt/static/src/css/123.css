@@ -1,0 +1,20 @@
+body .pos-customer_facing_display .pos-payment_info .pos-company_logo {
+
+ display: none;
+}
+
+ img {
+    display: none;
+}
+	
+body .pos-customer_facing_display .pos-payment_info .pos-payment_info_details .pos-odoo_logo_container {
+    background-image: url(/custom_pos_receipt/static/src/img/qr.png);
+    background-position: center top;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 1.5vw;
+    margin-top: 10%;
+	height: 710px;
+    width: 500px;
+}
+
