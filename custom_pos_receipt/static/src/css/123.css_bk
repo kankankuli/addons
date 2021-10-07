@@ -13,8 +13,8 @@ body .pos-customer_facing_display .pos-payment_info .pos-payment_info_details .p
     background-size: contain;
     background-repeat: no-repeat;
     height: 1.5vw;
-    margin-top: 10%;
-	height: 710px;
+    margin-top: 30%;
+    height: 710px;
     width: 500px;
 }
 
