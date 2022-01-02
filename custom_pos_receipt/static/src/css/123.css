@@ -18,3 +18,7 @@ body .pos-customer_facing_display .pos-payment_info .pos-payment_info_details .p
     width: 500px;
 }
 
+body .pos-customer_facing_display .pos_orderlines .pos_orderlines_item.pos_orderlines_header {
+
+    display: none;
+}
