@@ -1,0 +1,50 @@
+install ubuntu 20.04
+update
+upgrade
+snap install docker         
+apt install docker-compose
+nano docker-compose.yml
+//// 
+version: '2'
+services:
+  db:
+    image: postgres:latest
+    environment:
+      - POSTGRES_PASSWORD=odoo
+      - POSTGRES_USER=odoo
+      - POSTGRES_DB=postgres
+    restart: always             # run as a service
+    volumes:
+        - ./postgresql:/var/lib/postgresql/data
+
+  odoo13:
+    image: odoo:13
+    depends_on:
+      - db
+    ports:
+      - "8069:8069"
+    tty: true
+    command: -- --dev=reload
+
+    volumes:
+      - ./addons:/mnt/extra-addons
+      - ./etc:/etc/odoo
+    restart: always             # run as a service 
+/////
+git clone https://github.com/kankankuli/addons.git
+mkdir etc
+nano etc/odoo.conf
+////
+[options]
+addons_path = /mnt/extra-addons
+data_dir = /var/lib/odoo
+
+admin_passwd = Lsf7000+
+;list_db = False
+list_db = True
+/////
+cd mnt
+wget https://www.soladrive.com/downloads/enterprise-13.0.tar.gz
+tar -zxvf enterprise-13.0.tar.gz
+mv 13.0 extra-addons
+docker-compose up -d
