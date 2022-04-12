@@ -43,8 +43,7 @@ admin_passwd = Lsf7000+
 ;list_db = False
 list_db = True
 /////
-cd mnt
 wget https://www.soladrive.com/downloads/enterprise-13.0.tar.gz
 tar -zxvf enterprise-13.0.tar.gz
-mv 13.0 extra-addons
+mv -v ~/13.0/* ~/addons/
 docker-compose up -d
