@@ -31,8 +31,8 @@ services:
       - ./etc:/etc/odoo
     restart: always             # run as a service 
 /////
+docker-compose up -d
 git clone https://github.com/kankankuli/addons.git
-mkdir etc
 nano etc/odoo.conf
 ////
 [options]
@@ -46,4 +46,6 @@ list_db = True
 wget https://www.soladrive.com/downloads/enterprise-13.0.tar.gz
 tar -zxvf enterprise-13.0.tar.gz
 mv -v ~/13.0/* ~/addons/
+docker-compose stop
 docker-compose up -d
+
