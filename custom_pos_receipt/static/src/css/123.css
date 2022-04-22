@@ -8,7 +8,7 @@ body .pos-customer_facing_display .pos-payment_info .pos-company_logo {
 }
 	
 body .pos-customer_facing_display .pos-payment_info .pos-payment_info_details .pos-odoo_logo_container {
-    background-image: url(/custom_pos_receipt/static/src/img/qr.png);
+    background-image: url(http://192.168.0.51:8069/web/static/src/img/qrpay.png);
     background-position: center top;
     background-size: contain;
     background-repeat: no-repeat;
