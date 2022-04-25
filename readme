@@ -96,3 +96,9 @@ dpkg -i wkhtmltox_0.12.6-1.focal_arm64.deb
 ln -s /usr/local/bin/wkhtmltopdf /usr/bin
 ln -s /usr/local/bin/wkhtmltoimage /usr/bin
 systemctl restart odoo.service
+#######
+####
+####
+Install the following fonts.
+sudo apt-get install ttf-wqy-zenhei
+sudo apt-get install ttf-wqy-microhei
