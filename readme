@@ -102,3 +102,5 @@ systemctl restart odoo.service
 Install the following fonts.
 sudo apt-get install ttf-wqy-zenhei
 sudo apt-get install ttf-wqy-microhei
+#########
+https://linuxize.com/post/how-to-install-odoo-13-on-ubuntu-18-04/
