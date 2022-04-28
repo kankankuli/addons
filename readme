@@ -37,7 +37,7 @@ git clone https://github.com/kankankuli/addons.git
 nano etc/odoo.conf
 ////
 [options]
-addons_path = /mnt/extra-addons
+addons_path = /mnt/enterprise-addons,/mnt/extra-addons
 data_dir = /var/lib/odoo
 
 admin_passwd = Lsf7000+
@@ -46,6 +46,7 @@ list_db = True
 /////
 wget https://www.soladrive.com/downloads/enterprise-13.0.tar.gz
 tar -zxvf enterprise-13.0.tar.gz
+mv 13.0 addons-enterprise
 mv -v ~/13.0/* ~/addons/
 docker-compose stop
 docker-compose up -d
