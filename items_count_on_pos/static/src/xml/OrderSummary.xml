@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-extend="OrderWidget">
+        <t t-jquery="div.line" t-operation="before">
+            <div class="line_info">      
+                <t t-if="widget.pos.config.is_total_items">
+                    <div class="subentry">
+                        Total Items:
+                        <span class="value total_items">
+                            0
+                        </span>
+                    </div>
+                </t>    
+                <t t-if="widget.pos.config.is_total_qty">
+                    <div class="subentry">
+                        Total Quantity:
+                        <span class="value total_qty">
+                            0
+                        </span>
+                    </div>
+                </t>
+            </div>
+        </t>
+    </t>
+
+    <t t-extend="OrderReceipt">
+        <t t-jquery="div.before-footer" t-operation="before">
+            <t t-if="widget.pos.config.is_total_items_on_print">
+                <div style="margin-top: 5px">
+                    Total Items:
+                    <span t-esc="receipt.total_items" class="pos-receipt-right-align"/>
+                </div>
+            </t>
+            <t t-if="widget.pos.config.is_total_qty_on_print">
+                <div style="margin-top: 5px">
+                    Total Quantity:
+                    <span t-esc="receipt.total_qty" class="pos-receipt-right-align"/>
+                </div>
+            </t>
+        </t>
+    </t>
+
+</templates>

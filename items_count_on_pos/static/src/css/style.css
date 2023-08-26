@@ -1,0 +1,14 @@
+.pos .order .summary .line_info {
+    float: left;
+    margin-right: 15px;
+    margin-left: 15px;
+    padding-top: 5px;
+    border-top: solid 2px;
+    border-color: #777;
+}
+
+.pos .order .summary .line_info .subentry {
+    font-size: 16px;
+    font-weight: normal;
+    text-align: left;
+}

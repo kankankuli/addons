@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>       
+        <template id="payment_reference_on_pos" inherit_id="point_of_sale.assets">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" type="text/css" href="/items_count_on_pos/static/src/css/style.css"/>
+                <script type="text/javascript" src="/items_count_on_pos/static/src/js/models.js"/>
+                <script type="text/javascript" src="/items_count_on_pos/static/src/js/OrderWidget.js"/>
+            </xpath>
+        </template>
+    </data>
+</odoo>
