@@ -50,9 +50,9 @@
 
             <br/>
             <div class="pos-receipt-order-data">
-                <div><t t-esc='date' /></div>
+                <div class="pos-receipt-amount receipt-change" ><t t-esc='date' /></div>
             </div>
-
+<br/>
         </div>
     </t>
 
