@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<t name="POS Index" t-name="point_of_sale.index">&lt;!DOCTYPE html&gt;
+<html>
+    <head>
+        <title>Odoo POS</title>
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <meta http-equiv="content-type" content="text/html, charset=utf-8"/>
+
+        <meta name="viewport" content=" width=1024, user-scalable=no"/>
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta name="mobile-web-app-capable" content="yes"/>
+
+        <link rel="shortcut icon" sizes="196x196" href="/point_of_sale/static/src/img/touch-icon-196.png"/>
+        <link rel="shortcut icon" sizes="128x128" href="/point_of_sale/static/src/img/touch-icon-128.png"/>
+        <link rel="apple-touch-icon" href="/point_of_sale/static/src/img/touch-icon-iphone.png"/>
+        <link rel="apple-touch-icon" sizes="76x76" href="/point_of_sale/static/src/img/touch-icon-ipad.png"/>
+        <link rel="apple-touch-icon" sizes="120x120" href="/point_of_sale/static/src/img/touch-icon-iphone-retina.png"/>
+        <link rel="apple-touch-icon" sizes="152x152" href="/point_of_sale/static/src/img/touch-icon-ipad-retina.png"/>
+
+        <style> body { background: #222; } 
+        /* .pos-receipt div:nth-child(0n+16) {display: none;}  */
+        .pos img.pos-receipt-logo, .button.js_set_customer, .button.js_email, .button.js_cashdrawer {display: none;}
+        .pos .actionpad .button.set-customer {background: #c7c7c7; color: #a5a1a1;pointer-events: none;}
+        .pads .numpad button:nth-child(9) {background: #c7c7c7; color: #a5a1a1;pointer-events: none;}
+        /* .pads .numpad button:nth-child(9), .pads .numpad button:nth-child(14){background: #c7c7c7; color: #a5a1a1;pointer-events: none;} */
+        .button.print_invoice {display: none;}
+        /* button.print_invoice, .pos-branding img.pos-logo {display: none;}  */
+        /* .pos-receipt .pos-receipt-contact, .pos-receipt .pos-receipt-order-data {font-size: 100% !important;} */
+        /* .pos-receipt-contact div:nth-child(0n+2) {display: none;} */ 
+        /* .pos-receipt-contact div:nth-child(0n+4) {margin-top:10px; margin-bottom:10px;} */
+        .badge {display: none;} 
+        /* .value {font-size: 42px;} */
+.pos .categories {    display: none;}
+.pos .numpad {    width: 400px !important;}
+.pos .numpad button {    height: 100px !important;    width: 100px !important; }
+.pos .actionpad .button.set-customer  {    height: 100px !important;}
+.pos .control-button {    line-height: 76px !important; font-size: 36px!important;}
+.pos .actionpad .button.set-customer {    display: none;}
+.pos .actionpad .button.pay {    height: 400px !important; }
+.pos .actionpad {    width: 150px !important;}
+.pos .input-button {    font-size: 48px !important; }
+.pos .mode-button {    font-size: 28px !important; }
+.pos .actionpad .button {    font-size: 28px !important; }
+ table.paymentlines tr.label  {    display: none;}
+.payment-screen .paymentlines-empty .message {    display: none;}
+.pos .paymentlines-container {    min-height: 0px !important;}
+.pos .order .orderline ul.info-list {    padding-bottom: 10px;}
+.pos .pos-receipt .pos-receipt-amount {    font-size: 100%; }
+.pos div.pos-receipt-amount.receipt-change {    font-size: 130%; color: red; padding-left: 5em }
+.pos .screen .top-content h1  {    color: red; }
+.pos .order div.summary.clearfix {    margin-top: 5px;}
+ body .pos-customer_facing_display .pos-payment_info .pos-payment_info_details .pos-odoo_logo_container {background-position: center bottom;}
+.pos .order .orderline ul.info-list em {    color: red;}
+.pos .order .summary .line .subentry {    display: none;}
+.pos .order .summary .line_info .subentry .value.total_qty {    color: red; font-weight: bold;}
+.pos .order li.orderline {  padding-left: 5px;  padding-bottom: 7px; }
+.pos .order div.summary.clearfix  .line_info{    margin-left: 5px;}
+.pos .order div.summary.clearfix  .line_info .subentry:nth-last-child(even){    display: none;}
+.pos .order div.summary.clearfix  .line_info .subentry:nth-last-child(odd){     font-size: 22px;}
+.pos div.breadcrumbs {    display: none;}
+.pos div.searchbox input {    border-radius: 5px;}
+.pos .order li.orderline {    padding-right: 5px;}
+.pos .order .summary div.line {    margin-right: 5px; }
+.pos .order .summary .line_info div.subentry { font-weight: bold;}
+
+.pos .order div.summary.clearfix {   margin-top: 3px;}
+.pos .order .summary div.line_info {    padding-top: 0px;}
+.pos .order .summary div.line { padding-top: 0px;}
+        </style>
+
+        <link rel="shortcut icon" href="/web/static/src/img/favicon.ico" type="image/x-icon"/>
+
+        <script type="text/javascript">
+            var odoo = <t t-raw="json.dumps({                 'csrf_token': request.csrf_token(None),                 'session_info': session_info,                 'login_number': login_number,                 'debug': debug,             })"/>;
+        </script>
+
+        <t t-call-assets="web.assets_common" t-css="false"/>
+        <t t-call-assets="point_of_sale.pos_assets_backend" t-css="false"/>
+        <t t-call-assets="point_of_sale.assets"/>
+        <t t-call="web.conditional_assets_tests"/>
+
+        <script type="text/javascript" id="loading-script" t-raw="init">
+            odoo.define('web.web_client', function (require) {
+                var WebClient = require('web.AbstractWebClient');
+                var web_client = new WebClient();
+
+                web_client._title_changed = function() {};
+                web_client.show_application = function() {
+                    return web_client.action_manager.do_action("pos.ui");
+                };
+
+                $(function () {
+                    web_client.setElement($(document.body));
+                    web_client.start();
+                });
+                return web_client;
+            });
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
+</t>
