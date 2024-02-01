@@ -253,7 +253,7 @@
                     <div style="display: none;"><t t-esc='receipt.company.website' /></div>
                 </t>
                            <t t-if='receipt.company.phone'>
-                    <div>Tel:<t t-esc='receipt.company.phone' /></div>
+                    <div>Tel: <t t-esc='receipt.company.phone' /></div>
                 </t>
                 <t t-if='receipt.header_html'>
                     <t t-raw='receipt.header_html' />
@@ -267,7 +267,10 @@
                         <div>Cashier :  <t t-esc='receipt.cashier' /></div>
                     </div>
                 </t>
+
             </div>
+							 
+				<div class="after-footer" style="text-align: center; padding-top: 5px;">***RECEIPT***</div>
 <br />
 
             <!-- Orderlines -->
