@@ -234,7 +234,7 @@
                     <t t-esc='receipt.company.name' />
                 </div> 
             </t>
-            <div class="pos-receipt-contact">
+            <div class="after-footer" style="text-align: center;">
 			
 			    <t>
                     <div><t t-esc='receipt.company.name' /> (003068607-W)</div>
@@ -263,7 +263,7 @@
                 </t>
                 <t t-if='receipt.cashier'>
                     <div class='cashier'>
-                        <div>--------------------------------</div>
+                        <div>----------------------------------------------------</div>
                         <div>Cashier :  <t t-esc='receipt.cashier' /></div>
                     </div>
                 </t>
@@ -370,7 +370,7 @@
                 </t>
             </div>
             <br/>
-            <div class="pos-receipt-order-data">
+            <div class="after-footer" style="text-align: center;">
                 <div><t t-esc='receipt.name' /></div>
                 <div><t t-esc='receipt.date.localestring' /></div>
             </div>
