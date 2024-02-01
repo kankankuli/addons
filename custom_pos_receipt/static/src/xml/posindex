@@ -47,7 +47,7 @@
 .pos .paymentlines-container {    min-height: 0px !important;}
 .pos .order .orderline ul.info-list {    padding-bottom: 10px;}
 .pos .pos-receipt .pos-receipt-amount {    font-size: 100%; }
-.pos div.pos-receipt-amount.receipt-change {    font-size: 130%; color: red; padding-left: 5em }
+.pos div.pos-receipt-amount.receipt-change {    font-size: 130%; color: red; padding-left: 3em }
 .pos .screen .top-content h1  {    color: red; }
 .pos .order div.summary.clearfix {    margin-top: 5px;}
  body .pos-customer_facing_display .pos-payment_info .pos-payment_info_details .pos-odoo_logo_container {background-position: center bottom;}
