@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates id="template" xml:space="preserve">
 
+<t t-extend='Chrome'>
+        <t t-jquery='.pos-logo' t-operation='append'>
+            <t t-if="widget.pos.config">
+            <span class="username" t-esc="widget.pos.config.name"/>
+        </t>
+        </t>
+    </t>
+
+	
     <t t-name="SaleDetailsReport">
         <div class="pos-receipt">
 
