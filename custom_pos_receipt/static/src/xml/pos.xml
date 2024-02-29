@@ -49,15 +49,12 @@
 
 
             <div>------------------------</div>
-            <br/>
-
-
+       
             <div>
                 Total:
                 <span t-esc='widget.format_currency_no_symbol(total_paid)' class="pos-receipt-right-align"/>
             </div>
 
-            <br/>
             <div class="pos-receipt-order-data">
                 <div class="pos-receipt-amount receipt-change" ><t t-esc='date' /></div>
 		<div class="pos-receipt-amount receipt-change" ><t t-esc="widget.pos.config.name" /></div>
