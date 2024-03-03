@@ -56,9 +56,11 @@
             </div>
 
             <div class="pos-receipt-order-data" style="text-align: left;">
-                <div class="pos-receipt-amount receipt-change" ><t t-esc='date' /></div>
-		<div class="pos-receipt-amount receipt-change" ><t t-esc="widget.pos.config.name" /></div>
 		<div class="pos-receipt-amount receipt-change" ><t t-esc="widget.pos.user.name" /></div>
+		<div class="pos-receipt-amount receipt-change" ><t t-esc="widget.pos.config.name" /></div>
+                <div class="pos-receipt-amount receipt-change" ><t t-esc='date' /></div>
+
+
             </div>
 <br/>
         </div>
