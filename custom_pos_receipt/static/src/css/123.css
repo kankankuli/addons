@@ -29,3 +29,8 @@ body .pos-customer_facing_display .pos-payment_info .pos-payment_info_details .p
     font-size: 180%;
     margin-right: 0;
 }
+body .pos-customer_facing_display .pos-payment_info .pos-payment_info_details .pos-paymentlines {
+    margin-top: 2%;
+    font-size: 1.4vw;
+    line-height: 1.3;
+}
