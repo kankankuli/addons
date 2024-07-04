@@ -247,7 +247,8 @@
             <div class="after-footer" style="text-align: center;">
 			
 			    <t>
-                    <div><t t-esc='receipt.company.name' /> (003068607-W)</div>
+                 <!-- <div><t t-esc='receipt.company.name' /> (003068607-W)</div> --> 
+		 <div>Beyond Good Enterprise (003068607-W)</div> 
                 </t>
 
                 <t t-if='receipt.company.company_registry'>
