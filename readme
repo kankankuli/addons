@@ -37,7 +37,7 @@ git clone https://github.com/kankankuli/addons.git
 nano etc/odoo.conf
 ////
 [options]
-addons_path = /mnt/enterprise-addons,/mnt/extra-addons
+addons_path = /mnt/addons-enterprise,/mnt/extra-addons
 data_dir = /var/lib/odoo
 
 admin_passwd = 
@@ -120,7 +120,7 @@ services:
       - odoo-web-data:/var/lib/odoo
       - ./config:/etc/odoo
       - ./addons:/mnt/extra-addons
-      - ./addons-enterprise:/mnt/enterprise-addons
+      - ./addons-enterprise:/mnt/addons-enterprise
       - ./odoo-log-data:/var/log/odoo
     restart: always             # run as a service 
     # command:
