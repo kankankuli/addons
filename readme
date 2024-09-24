@@ -34,7 +34,7 @@ services:
 /////
 docker-compose up -d
 git clone https://github.com/kankankuli/addons.git
-nano etc/odoo.conf
+nano config/odoo.conf
 ////
 [options]
 addons_path = /mnt/addons-enterprise,/mnt/extra-addons
