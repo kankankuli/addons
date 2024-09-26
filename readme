@@ -7,30 +7,32 @@ nano docker-compose.yml
 //// 
 version: '2'
 services:
-  db:
-    image: postgres:latest
-    environment:
-      - POSTGRES_PASSWORD=odoo
-      - POSTGRES_USER=odoo
-      - POSTGRES_DB=postgres
-    restart: always             # run as a service
-    volumes:
-        - ./postgresql:/var/lib/postgresql/data
-
-  odoo13:
+  web:
     image: odoo:13.0
     depends_on:
       - db
     ports:
       - "8069:8069"
-   tty: true
-   command: -- --dev=reload
-
     volumes:
+      - odoo-web-data:/var/lib/odoo
+      - ./config:/etc/odoo
       - ./addons:/mnt/extra-addons
-      - ./addons-enterprise:/mnt/enterprise-addons
-      - ./etc:/etc/odoo
+      - ./addons-enterprise:/mnt/addons-enterprise
     restart: always             # run as a service 
+
+  db:
+    image: postgres:13
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_PASSWORD=odoo
+      - POSTGRES_USER=odoo
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    restart: always             # run as a service 
+    volumes:
+      - odoo-db-data:/var/lib/postgresql/data/pgdata
+volumes:
+  odoo-web-data:
+  odoo-db-data:
 /////
 docker-compose up -d
 git clone https://github.com/kankankuli/addons.git
@@ -107,39 +109,3 @@ sudo apt-get install ttf-wqy-microhei
 #########
 https://linuxize.com/post/how-to-install-odoo-13-on-ubuntu-18-04/
 
-/////////////////////////////////
-version: '3.5'
-services:
-  web:
-    image: odoo:13.0
-    depends_on:
-      - db
-    ports:
-      - "8069:8069"
-    volumes:
-      - odoo-web-data:/var/lib/odoo
-      - ./config:/etc/odoo
-      - ./addons:/mnt/extra-addons
-      - ./addons-enterprise:/mnt/addons-enterprise
-      - ./odoo-log-data:/var/log/odoo
-    restart: always             # run as a service 
-    # command:
-    #   odoo -r odoo -w odoo -i addons -d odoo
-  db:
-    image: postgres:latest
-    # ports:
-    #   - "5432:5432"
-    environment:
-      - POSTGRES_DB=postgres
-      - POSTGRES_USER=odoo
-      - POSTGRES_PASSWORD=odoo
-      - PGDATA=/var/lib/postgresql/data/pgdata
-    restart: always             # run as a service
-    volumes:
-      - odoo-db-data:/var/lib/postgresql/data/pgdata
-
-volumes:
-  odoo-web-data:
-  odoo-db-data:
-
-/////////////////////////////
