@@ -278,7 +278,15 @@
                         <div>Cashier :  <t t-esc='receipt.cashier' /></div>
                     </div>
                 </t>
+        <t t-jquery=".pos-receipt .pos-receipt-contact" t-operation='append'>
 
+            <t t-if='receipt.client'>
+                <div>Customer: <t t-esc='receipt.client' /></div>
+            </t>
+        </t>
+
+
+			
             </div>
 							 
 				<div class="after-footer" style="text-align: center; padding-top: 5px;">*** RECEIPT ***</div>
